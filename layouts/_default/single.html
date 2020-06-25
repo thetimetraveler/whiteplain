@@ -9,6 +9,10 @@
       <hr class="article-title-bottom">
       <ul class="article-meta">
         <li class="article-meta-date"><time>{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time></li>
+        <li class="article-meta-date"><time>{{ .Lastmod.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time></li>
+        {{ range (.GetTerms "status") }}
+            <li class="article-meta-date"> Status: {{ .LinkTitle }} </li>
+        {{ end }}
         {{- if .Params.categories }}
         {{- range .Params.categories }}
         <li class="article-meta-categories">
