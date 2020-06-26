@@ -197,7 +197,7 @@ blockquote blockquote blockquote blockquote {
 .article .article-meta {
   list-style-type: none;
   padding: 0;
-  margin: 5px 0 40px 0;
+  margin: 5px 0 5px 0;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: flex-end;

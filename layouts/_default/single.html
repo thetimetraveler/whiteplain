@@ -8,11 +8,13 @@
       {{ with .Params.subtitle }}<h2 class="article-subtitle">{{ . }}</h2>{{ end }}
       <hr class="article-title-bottom">
       <ul class="article-meta">
-        <li class="article-meta-date"><time>{{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time></li>
-        <li class="article-meta-date"><time>{{ .Lastmod.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time></li>
+        <li class="article-meta-date"><time>published {{ .Date.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time></li>
+        <li class="article-meta-date"><i>modified <time>{{ .Lastmod.Format (default "January 2, 2006" $.Site.Params.dateFormat) }}</time></i></li>
         {{ range (.GetTerms "status") }}
-            <li class="article-meta-date"> Status: {{ .LinkTitle }} </li>
+            <li class="article-meta-date"> status: {{ .LinkTitle }} </li>
         {{ end }}
+      </ul>
+      <ul class="article-meta">
         {{- if .Params.categories }}
         {{- range .Params.categories }}
         <li class="article-meta-categories">
